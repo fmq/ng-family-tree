@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-family-tree": [
+        "dist/ng-family-tree"
+      ],
+      "ng-family-tree/*": [
+        "dist/ng-family-tree/*"
+      ]
+    }
   }
 }
