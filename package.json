@@ -22,7 +22,6 @@
     "url": "https://github.com/fmq/ng-family-tree/issues"
   },
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
