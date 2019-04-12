@@ -1,6 +1,7 @@
 {
   "name": "ng-family-tree",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Angular 7 implementation of: https://codemyui.com/vertical-family-tree-pure-css/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +10,18 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "homepage": "https://github.com/fmq/ng-family-tree",
+  "author": {
+    "name": "fmq"
+  },
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/fmq/ng-family-tree"
+  },
+  "bugs": {
+    "url": "https://github.com/fmq/ng-family-tree/issues"
+  },
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
