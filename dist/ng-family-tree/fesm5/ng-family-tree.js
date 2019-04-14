@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 /**
  * @fileoverview added by tsickle
@@ -69,7 +69,7 @@ var NgFamilyTreeModule = /** @class */ (function () {
         { type: NgModule, args: [{
                     declarations: [NgFamilyTreeComponent, FtLeafComponent],
                     imports: [
-                        BrowserModule,
+                        CommonModule,
                     ],
                     exports: [NgFamilyTreeComponent]
                 },] }

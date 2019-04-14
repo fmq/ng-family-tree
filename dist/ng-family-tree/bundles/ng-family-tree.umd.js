@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser')) :
-    typeof define === 'function' && define.amd ? define('ng-family-tree', ['exports', '@angular/core', '@angular/platform-browser'], factory) :
-    (factory((global['ng-family-tree'] = {}),global.ng.core,global.ng.platformBrowser));
-}(this, (function (exports,core,platformBrowser) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common')) :
+    typeof define === 'function' && define.amd ? define('ng-family-tree', ['exports', '@angular/core', '@angular/common'], factory) :
+    (factory((global['ng-family-tree'] = {}),global.ng.core,global.ng.common));
+}(this, (function (exports,core,common) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -67,7 +67,7 @@
             { type: core.NgModule, args: [{
                         declarations: [NgFamilyTreeComponent, FtLeafComponent],
                         imports: [
-                            platformBrowser.BrowserModule,
+                            common.CommonModule,
                         ],
                         exports: [NgFamilyTreeComponent]
                     },] }

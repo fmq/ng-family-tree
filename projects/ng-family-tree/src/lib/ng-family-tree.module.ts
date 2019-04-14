@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { NgFamilyTreeComponent } from './ng-family-tree/ng-family-tree.component';
 import { FtLeafComponent } from './ng-family-tree/ft-leaf.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [NgFamilyTreeComponent, FtLeafComponent],
   imports: [
-    BrowserModule,
+    CommonModule,
   ],
   exports: [NgFamilyTreeComponent]
 })
