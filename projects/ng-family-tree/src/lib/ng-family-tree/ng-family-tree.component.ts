@@ -19,7 +19,7 @@ import { Family } from '../models/ng-family.model';
   `,
   styleUrls: ['./ng-family-tree.component.scss'],
   styles: [],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.None
 })
 export class NgFamilyTreeComponent implements OnInit {
 
