@@ -27,7 +27,7 @@ NgFamilyTreeComponent.decorators = [
     <div class="ft-tree">
       <ul>
         <li>
-          <a href="#">{{family.name}}</a>
+          <a [ngClass]="family.relationship ? family.relationship + '-top' : ''" href="#">{{family.name}}</a>
           <ul>
             <li *ngFor="let child of family.children">
               <ft-leaf [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" [child]="child"></ft-leaf>
