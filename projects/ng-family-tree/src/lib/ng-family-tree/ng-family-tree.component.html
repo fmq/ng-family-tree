@@ -1,7 +1,7 @@
 <div class="ft-tree">
   <ul>
     <li>
-      <a href="#">{{family.name}}</a>
+      <a (click)="_leafSelected(family)" >{{family.name}}</a>
       <ul>
         <li *ngFor="let child of family.children">
           <ft-leaf [child]="child"></ft-leaf>

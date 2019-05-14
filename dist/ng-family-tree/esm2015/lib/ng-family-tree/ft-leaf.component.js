@@ -2,19 +2,28 @@
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Family } from '../models/ng-family.model';
 export class FtLeafComponent {
-    constructor() { }
+    constructor() {
+        this.onLeafSelected = new EventEmitter();
+    }
+    /**
+     * @param {?} _leaf
+     * @return {?}
+     */
+    _leafSelected(_leaf) {
+        this.onLeafSelected.emit(_leaf);
+    }
 }
 FtLeafComponent.decorators = [
     { type: Component, args: [{
                 selector: 'ft-leaf',
                 template: `
-    <a href="#">{{child.name}}</a>
+    <a [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" (click)="_leafSelected(child)">{{child.name}}</a>
     <ul *ngIf="child.children && child.children.length > 0">
       <li *ngFor="let row of child.children">
-        <ft-leaf [child]="row"></ft-leaf>
+        <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="row"></ft-leaf>
       </li>
     </ul>
   `
@@ -23,10 +32,13 @@ FtLeafComponent.decorators = [
 /** @nocollapse */
 FtLeafComponent.ctorParameters = () => [];
 FtLeafComponent.propDecorators = {
-    child: [{ type: Input }]
+    child: [{ type: Input }],
+    onLeafSelected: [{ type: Output }]
 };
 if (false) {
     /** @type {?} */
     FtLeafComponent.prototype.child;
+    /** @type {?} */
+    FtLeafComponent.prototype.onLeafSelected;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnQtbGVhZi5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZy1mYW1pbHktdHJlZS8iLCJzb3VyY2VzIjpbImxpYi9uZy1mYW1pbHktdHJlZS9mdC1sZWFmLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQ0EsT0FBTyxFQUFFLFNBQVMsRUFBRSxLQUFLLEVBQVUsTUFBTSxlQUFlLENBQUM7QUFDekQsT0FBTyxFQUFFLE1BQU0sRUFBRSxNQUFNLDJCQUEyQixDQUFDO0FBYW5ELE1BQU0sT0FBTyxlQUFlO0lBSTFCLGdCQUFnQixDQUFDOzs7WUFmbEIsU0FBUyxTQUFDO2dCQUNULFFBQVEsRUFBRSxTQUFTO2dCQUNuQixRQUFRLEVBQUU7Ozs7Ozs7R0FPVDthQUNGOzs7OztvQkFHRSxLQUFLOzs7O0lBQU4sZ0NBQXVCIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBDb21wb25lbnQsIElucHV0LCBPbkluaXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEZhbWlseSB9IGZyb20gJy4uL21vZGVscy9uZy1mYW1pbHkubW9kZWwnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdmdC1sZWFmJyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8YSBocmVmPVwiI1wiPnt7Y2hpbGQubmFtZX19PC9hPlxuICAgIDx1bCAqbmdJZj1cImNoaWxkLmNoaWxkcmVuICYmIGNoaWxkLmNoaWxkcmVuLmxlbmd0aCA+IDBcIj5cbiAgICAgIDxsaSAqbmdGb3I9XCJsZXQgcm93IG9mIGNoaWxkLmNoaWxkcmVuXCI+XG4gICAgICAgIDxmdC1sZWFmIFtjaGlsZF09XCJyb3dcIj48L2Z0LWxlYWY+XG4gICAgICA8L2xpPlxuICAgIDwvdWw+XG4gIGBcbn0pXG5leHBvcnQgY2xhc3MgRnRMZWFmQ29tcG9uZW50IHtcblxuICBASW5wdXQoKSBjaGlsZDogRmFtaWx5O1xuXG4gIGNvbnN0cnVjdG9yKCkgeyB9XG5cbn1cblxuIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnQtbGVhZi5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZy1mYW1pbHktdHJlZS8iLCJzb3VyY2VzIjpbImxpYi9uZy1mYW1pbHktdHJlZS9mdC1sZWFmLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQ0EsT0FBTyxFQUFFLFNBQVMsRUFBRSxZQUFZLEVBQUUsS0FBSyxFQUFFLE1BQU0sRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN2RSxPQUFPLEVBQUUsTUFBTSxFQUFFLE1BQU0sMkJBQTJCLENBQUM7QUFhbkQsTUFBTSxPQUFPLGVBQWU7SUFLMUI7UUFGVSxtQkFBYyxHQUF5QixJQUFJLFlBQVksRUFBRSxDQUFDO0lBRXBELENBQUM7Ozs7O0lBRWpCLGFBQWEsQ0FBQyxLQUFLO1FBQ2pCLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ2xDLENBQUM7OztZQXBCRixTQUFTLFNBQUM7Z0JBQ1QsUUFBUSxFQUFFLFNBQVM7Z0JBQ25CLFFBQVEsRUFBRTs7Ozs7OztHQU9UO2FBQ0Y7Ozs7O29CQUdFLEtBQUs7NkJBQ0wsTUFBTTs7OztJQURQLGdDQUF1Qjs7SUFDdkIseUNBQW9FIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBDb21wb25lbnQsIEV2ZW50RW1pdHRlciwgSW5wdXQsIE91dHB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRmFtaWx5IH0gZnJvbSAnLi4vbW9kZWxzL25nLWZhbWlseS5tb2RlbCc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2Z0LWxlYWYnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxhIFtuZ0NsYXNzXT1cImNoaWxkLnJlbGF0aW9uc2hpcCA/IGNoaWxkLnJlbGF0aW9uc2hpcCArICctbGVhZicgOiAnJ1wiIChjbGljayk9XCJfbGVhZlNlbGVjdGVkKGNoaWxkKVwiPnt7Y2hpbGQubmFtZX19PC9hPlxuICAgIDx1bCAqbmdJZj1cImNoaWxkLmNoaWxkcmVuICYmIGNoaWxkLmNoaWxkcmVuLmxlbmd0aCA+IDBcIj5cbiAgICAgIDxsaSAqbmdGb3I9XCJsZXQgcm93IG9mIGNoaWxkLmNoaWxkcmVuXCI+XG4gICAgICAgIDxmdC1sZWFmIChvbkxlYWZTZWxlY3RlZCk9XCJfbGVhZlNlbGVjdGVkKCRldmVudClcIiBbY2hpbGRdPVwicm93XCI+PC9mdC1sZWFmPlxuICAgICAgPC9saT5cbiAgICA8L3VsPlxuICBgXG59KVxuZXhwb3J0IGNsYXNzIEZ0TGVhZkNvbXBvbmVudCB7XG5cbiAgQElucHV0KCkgY2hpbGQ6IEZhbWlseTtcbiAgQE91dHB1dCgpIG9uTGVhZlNlbGVjdGVkOiBFdmVudEVtaXR0ZXI8RmFtaWx5PiA9IG5ldyBFdmVudEVtaXR0ZXIoKTtcblxuICBjb25zdHJ1Y3RvcigpIHsgfVxuXG4gIF9sZWFmU2VsZWN0ZWQoX2xlYWYpIHtcbiAgICB0aGlzLm9uTGVhZlNlbGVjdGVkLmVtaXQoX2xlYWYpO1xuICB9XG5cbn1cblxuIl19

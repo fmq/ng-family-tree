@@ -10,6 +10,7 @@
      */
     var NgFamilyTreeComponent = /** @class */ (function () {
         function NgFamilyTreeComponent() {
+            this.onLeafSelected = new core.EventEmitter();
         }
         /**
          * @return {?}
@@ -19,18 +20,30 @@
          */
             function () {
             };
+        /**
+         * @param {?} _leaf
+         * @return {?}
+         */
+        NgFamilyTreeComponent.prototype._leafSelected = /**
+         * @param {?} _leaf
+         * @return {?}
+         */
+            function (_leaf) {
+                this.onLeafSelected.emit(_leaf);
+            };
         NgFamilyTreeComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'ft-tree',
-                        template: "\n    <div class=\"ft-tree\">\n      <ul>\n        <li>\n          <a [ngClass]=\"family.relationship ? family.relationship + '-top' : ''\" href=\"#\">{{family.name}}</a>\n          <ul>\n            <li *ngFor=\"let child of family.children\">\n              <ft-leaf [ngClass]=\"child.relationship ? child.relationship + '-leaf' : ''\" [child]=\"child\"></ft-leaf>\n            </li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  ",
+                        template: "\n    <div class=\"ft-tree\">\n      <ul>\n        <li>\n          <a *ngIf=\"family.name\" [ngClass]=\"family.relationship ? family.relationship + '-leaf' : ''\"\n             (click)=\"_leafSelected(family)\">{{family.name}}</a>\n          <ul class=\"top\" [ngClass]=\"{'no-border': !family.name}\" >\n            <li *ngFor=\"let child of family.children\">\n            <ft-leaf (onLeafSelected)=\"_leafSelected($event)\" [child]=\"child\"></ft-leaf>\n            </li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  ",
                         encapsulation: core.ViewEncapsulation.None,
-                        styles: ["*{margin:0;padding:0}.ft-tree ul{padding-top:20px;position:relative;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li{float:left;text-align:center;list-style-type:none;position:relative;padding:20px 5px 0;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li::before{content:'';position:absolute;top:0;right:50%;border-top:1px solid #ccc;width:50%;height:20px}.ft-tree li::after{content:'';position:absolute;top:0;border-top:1px solid #ccc;width:50%;height:20px;right:auto;left:50%;border-left:1px solid #ccc}.ft-tree li:only-child{padding-top:0}.ft-tree li:only-child::after,.ft-tree li:only-child::before{display:none}.ft-tree li:first-child::before,.ft-tree li:last-child::after{border:0}.ft-tree li:last-child::before{border-right:1px solid #ccc;border-radius:0 5px 0 0;-webkit-border-radius:0 5px 0 0;-moz-border-radius:0 5px 0 0}.ft-tree li:first-child::after{border-radius:5px 0 0;-webkit-border-radius:5px 0 0 0;-moz-border-radius:5px 0 0}.ft-tree ul ul::before{content:'';position:absolute;top:0;left:50%;border-left:1px solid #ccc;width:0;height:20px}.ft-tree li a{border:1px solid #ccc;padding:5px 10px;text-decoration:none;color:#666;font-family:arial,verdana,tahoma;font-size:11px;display:inline-block;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li a:hover,.ft-tree li a:hover+ul li a{background:#c8e4f8;color:#000;border:1px solid #94a0b4}.ft-tree li a:hover+ul li::after,.ft-tree li a:hover+ul li::before,.ft-tree li a:hover+ul ul::before,.ft-tree li a:hover+ul::before{border-color:#94a0b4}"]
+                        styles: ["*{margin:0;padding:0}.ft-tree ul{padding-top:20px;position:relative;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li{float:left;text-align:center;list-style-type:none;position:relative;padding:20px 5px 0;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li::before{content:'';position:absolute;top:0;right:50%;border-top:1px solid #ccc;width:50%;height:20px}.ft-tree li::after{content:'';position:absolute;top:0;border-top:1px solid #ccc;width:50%;height:20px;right:auto;left:50%;border-left:1px solid #ccc}.ft-tree li:only-child{padding-top:0}.ft-tree li:only-child::after,.ft-tree li:only-child::before{display:none}.ft-tree li:first-child::before,.ft-tree li:last-child::after{border:0}.ft-tree li:last-child::before{border-right:1px solid #ccc;border-radius:0 5px 0 0;-webkit-border-radius:0 5px 0 0;-moz-border-radius:0 5px 0 0}.ft-tree li:first-child::after{border-radius:5px 0 0;-webkit-border-radius:5px 0 0 0;-moz-border-radius:5px 0 0}.ft-tree ul ul::before{content:'';position:absolute;top:0;left:50%;border-left:1px solid #ccc;width:0;height:20px}.ft-tree li a{border:1px solid #ccc;padding:5px 10px;text-decoration:none;color:#666;font-family:arial,verdana,tahoma;font-size:11px;display:inline-block;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;transition:.5s;-webkit-transition:.5s;-moz-transition:.5s}.ft-tree li a:hover,.ft-tree li a:hover+ul li a{background:#c8e4f8;color:#000;border:1px solid #94a0b4}.ft-tree li a:hover+ul li::after,.ft-tree li a:hover+ul li::before,.ft-tree li a:hover+ul ul::before,.ft-tree li a:hover+ul::before{border-color:#94a0b4}.ft-tree .no-border:before{border:none!important}"]
                     }] }
         ];
         /** @nocollapse */
         NgFamilyTreeComponent.ctorParameters = function () { return []; };
         NgFamilyTreeComponent.propDecorators = {
-            family: [{ type: core.Input }]
+            family: [{ type: core.Input }],
+            onLeafSelected: [{ type: core.Output }]
         };
         return NgFamilyTreeComponent;
     }());
@@ -41,17 +54,30 @@
      */
     var FtLeafComponent = /** @class */ (function () {
         function FtLeafComponent() {
+            this.onLeafSelected = new core.EventEmitter();
         }
+        /**
+         * @param {?} _leaf
+         * @return {?}
+         */
+        FtLeafComponent.prototype._leafSelected = /**
+         * @param {?} _leaf
+         * @return {?}
+         */
+            function (_leaf) {
+                this.onLeafSelected.emit(_leaf);
+            };
         FtLeafComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'ft-leaf',
-                        template: "\n    <a href=\"#\">{{child.name}}</a>\n    <ul *ngIf=\"child.children && child.children.length > 0\">\n      <li *ngFor=\"let row of child.children\">\n        <ft-leaf [child]=\"row\"></ft-leaf>\n      </li>\n    </ul>\n  "
+                        template: "\n    <a [ngClass]=\"child.relationship ? child.relationship + '-leaf' : ''\" (click)=\"_leafSelected(child)\">{{child.name}}</a>\n    <ul *ngIf=\"child.children && child.children.length > 0\">\n      <li *ngFor=\"let row of child.children\">\n        <ft-leaf (onLeafSelected)=\"_leafSelected($event)\" [child]=\"row\"></ft-leaf>\n      </li>\n    </ul>\n  "
                     }] }
         ];
         /** @nocollapse */
         FtLeafComponent.ctorParameters = function () { return []; };
         FtLeafComponent.propDecorators = {
-            child: [{ type: core.Input }]
+            child: [{ type: core.Input }],
+            onLeafSelected: [{ type: core.Output }]
         };
         return FtLeafComponent;
     }());

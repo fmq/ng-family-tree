@@ -4,6 +4,7 @@
 }
 
 .ft-tree {
+
   ul {
     padding-top: 20px;
     position: relative;
@@ -110,5 +111,9 @@
         }
       }
     }
+  }
+
+  .no-border:before {
+    border: none !important;
   }
 }

@@ -3,15 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <ft-tree [family]="family"></ft-tree>
+    <ft-tree (onLeafSelected)="onLeafSelected($event)" [family]="family"></ft-tree>
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'demo';
 
+  onLeafSelected(data) {
+    console.log(data);
+  }
+
   family = {
     name: 'parent',
+    relationship: 'top',
     children:
       [{  name: 'child1',
           children: [

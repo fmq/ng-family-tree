@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Family } from '../models/ng-family.model';
 
 @Component({
@@ -7,10 +7,11 @@ import { Family } from '../models/ng-family.model';
     <div class="ft-tree">
       <ul>
         <li>
-          <a [ngClass]="family.relationship ? family.relationship + '-top' : ''" href="#">{{family.name}}</a>
-          <ul>
+          <a *ngIf="family.name" [ngClass]="family.relationship ? family.relationship + '-leaf' : ''"
+             (click)="_leafSelected(family)">{{family.name}}</a>
+          <ul class="top" [ngClass]="{'no-border': !family.name}" >
             <li *ngFor="let child of family.children">
-              <ft-leaf [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" [child]="child"></ft-leaf>
+            <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="child"></ft-leaf>
             </li>
           </ul>
         </li>
@@ -24,10 +25,15 @@ import { Family } from '../models/ng-family.model';
 export class NgFamilyTreeComponent implements OnInit {
 
   @Input() family: Family;
+  @Output() onLeafSelected: EventEmitter<Family> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  _leafSelected(_leaf) {
+    this.onLeafSelected.emit(_leaf);
   }
 
 }
