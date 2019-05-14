@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class Family {
+}
 
 /**
  * @fileoverview added by tsickle
@@ -28,7 +30,7 @@ NgFamilyTreeComponent.decorators = [
           <a href="#">{{family.name}}</a>
           <ul>
             <li *ngFor="let child of family.children">
-              <ft-leaf [child]="child"></ft-leaf>
+              <ft-leaf [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" [child]="child"></ft-leaf>
             </li>
           </ul>
         </li>
@@ -97,6 +99,6 @@ NgFamilyTreeModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { NgFamilyTreeComponent, NgFamilyTreeModule, FtLeafComponent as ɵa };
+export { NgFamilyTreeComponent, NgFamilyTreeModule, Family, FtLeafComponent as ɵa };
 
 //# sourceMappingURL=ng-family-tree.js.map

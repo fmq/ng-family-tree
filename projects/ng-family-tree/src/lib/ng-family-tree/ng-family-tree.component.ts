@@ -10,7 +10,7 @@ import { Family } from '../models/ng-family.model';
           <a href="#">{{family.name}}</a>
           <ul>
             <li *ngFor="let child of family.children">
-              <ft-leaf [child]="child"></ft-leaf>
+              <ft-leaf [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" [child]="child"></ft-leaf>
             </li>
           </ul>
         </li>

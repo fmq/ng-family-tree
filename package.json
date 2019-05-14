@@ -1,6 +1,6 @@
 {
   "name": "ng-family-tree",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Angular 7 implementation of: https://codemyui.com/vertical-family-tree-pure-css/",
   "scripts": {
     "ng": "ng",

@@ -18,6 +18,7 @@ export class AppComponent {
             {name: 'Grand Child 1'}
           ]},
         {  name: 'child2',
+          relationship: 'self',
           children: [
             {name: 'Grand Child 2',
               children: [
