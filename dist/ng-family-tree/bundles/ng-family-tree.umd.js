@@ -70,7 +70,7 @@
         FtLeafComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'ft-leaf',
-                        template: "\n    <a [ngClass]=\"child.relationship ? child.relationship + '-leaf' : ''\" (click)=\"_leafSelected(child)\">{{child.name}}</a>\n    <ul *ngIf=\"child.children && child.children.length > 0\">\n      <li *ngFor=\"let row of child.children\">\n        <ft-leaf (onLeafSelected)=\"_leafSelected($event)\" [child]=\"row\"></ft-leaf>\n      </li>\n    </ul>\n  "
+                        template: "\n    <a [ngClass]=\"child.relationship ? child.relationship + '-leaf' : ''\" (click)=\"_leafSelected(child)\"\n        *ngIf=\"child.name\">{{child.name}}</a>\n    <ul *ngIf=\"child.children && child.children.length > 0\">\n      <li *ngFor=\"let row of child.children\">\n        <ft-leaf (onLeafSelected)=\"_leafSelected($event)\" [child]=\"row\"></ft-leaf>\n      </li>\n    </ul>\n  "
                     }] }
         ];
         /** @nocollapse */

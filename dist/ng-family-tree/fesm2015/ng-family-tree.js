@@ -78,7 +78,8 @@ FtLeafComponent.decorators = [
     { type: Component, args: [{
                 selector: 'ft-leaf',
                 template: `
-    <a [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" (click)="_leafSelected(child)">{{child.name}}</a>
+    <a [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" (click)="_leafSelected(child)"
+        *ngIf="child.name">{{child.name}}</a>
     <ul *ngIf="child.children && child.children.length > 0">
       <li *ngFor="let row of child.children">
         <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="row"></ft-leaf>
