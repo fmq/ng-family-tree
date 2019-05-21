@@ -1,6 +1,6 @@
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Family } from '../models/ng-family.model';
+import { Family } from '../models/family.model';
 
 @Component({
   selector: 'ft-leaf',

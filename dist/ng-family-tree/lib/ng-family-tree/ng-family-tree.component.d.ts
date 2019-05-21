@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { Family } from '../models/ng-family.model';
+import { Family } from '../models/family.model';
 export declare class NgFamilyTreeComponent implements OnInit {
     family: Family;
     onLeafSelected: EventEmitter<Family>;

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { Family } from '../models/ng-family.model';
+import { Family } from '../models/family.model';
 
 @Component({
   selector: 'ft-tree',
@@ -10,7 +10,7 @@ import { Family } from '../models/ng-family.model';
           <div>
             <span  *ngFor="let node of family.nodes" (click)="_leafSelected(node)" [ngClass]="node.gender" class="node">{{node.name}}</span>
           </div>
-          <ul class="top" [ngClass]="{'no-border': !family.name}" >
+          <ul>
             <li *ngFor="let child of family.children">
             <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="child"></ft-leaf>
             </li>
