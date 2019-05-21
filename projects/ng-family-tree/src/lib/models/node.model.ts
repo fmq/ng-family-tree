@@ -1,4 +1,4 @@
-export class Node {
+export class TreeNode {
   name: string;
   gender: string;
   relationship: string;

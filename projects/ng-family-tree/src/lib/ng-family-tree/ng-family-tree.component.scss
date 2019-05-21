@@ -106,8 +106,7 @@ $border_color: #94a0b4;
       transition: all 0.5s;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
-      .male {
-        background-color: $background_color_male;
+      .node {
         display: inline-block;
         min-width: 90px;
         padding: 10px;
@@ -115,16 +114,12 @@ $border_color: #94a0b4;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         margin: 0px 2px;
-      }
-      .female {
-        background-color: $background_color_female;
-        display: inline-block;
-        min-width: 90px;
-        padding: 10px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        margin: 0px 2px;
+        &.male {
+          background-color: $background_color_male;
+        }
+        &.female {
+          background-color: $background_color_female;
+        }
       }
       &:hover {
         background: #c8e4f8;

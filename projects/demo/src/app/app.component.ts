@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Family } from '../../../ng-family-tree/src/lib/models/family.model';
+import { TreeNode } from '../../../ng-family-tree/src/lib/models/node.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'demo';
 
   onLeafSelected(data) {
@@ -31,4 +33,10 @@ export class AppComponent {
     }]
   };
 
+  ngOnInit() {
+    const node = new TreeNode();
+    node.name = 'XX';
+    this.family.nodes.push(node);
+
+  }
 }
