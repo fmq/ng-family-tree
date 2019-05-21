@@ -5,8 +5,11 @@ import { Family } from '../models/ng-family.model';
 @Component({
   selector: 'ft-leaf',
   template: `
-    <a [ngClass]="child.relationship ? child.relationship + '-leaf' : ''" (click)="_leafSelected(child)"
-        *ngIf="child.name">{{child.name}}</a>
+    <div>
+      <span  *ngFor="let node of child.nodes" class="node"
+             [ngClass]="node.relationship ? node.relationship + '-leaf' : ''"
+             (click)="_leafSelected(node)" [class]="node.gender">{{node.name}}</span>
+    </div>
     <ul *ngIf="child.children && child.children.length > 0">
       <li *ngFor="let row of child.children">
         <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="row"></ft-leaf>

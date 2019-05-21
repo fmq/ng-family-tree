@@ -1,6 +1,15 @@
-a.self-leaf {
+.node.self-leaf {
   background-color: transparent !important;
   background-image: none !important;
   border-color: #3a63c2 !important;
   color: #3a63c2 !important;
+}
+
+div span.node:only-child {
+  border: none;
+}
+
+.node {
+  background-color: transparent !important;
+  border: 1px solid #ccc;
 }

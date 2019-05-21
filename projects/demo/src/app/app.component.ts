@@ -15,21 +15,20 @@ export class AppComponent {
   }
 
   family = {
-    children:
-      [ {  name: 'padre'},
-        {  children: [
-            {
-              name: 'Grand Child 3',
-              relationship: 'self',
-              children: [
-                {name: 'Grand Grand Child 2'},
-                {name: 'Grand Grand Child 3'},
-                {name: 'Grand Grand Child 4'}
-              ]
-            },
-          ]},
-        {  name: 'madre'},
-      ]
+    nodes: [
+      {name: 'padre', gender: 'male'},
+      {name: 'madre', gender: 'female'}
+      ],
+    children: [{
+      nodes: [
+        {name: 'Self', gender: 'male', relationship: 'self'},
+      ],
+      children: [
+        {nodes: [{name: 'Grand Grand Child 2', gender: 'male'}] },
+        {nodes: [{name: 'Grand Grand Child 3', gender: 'male'}] },
+        {nodes: [{name: 'Grand Grand Child 4', gender: 'female'}] }
+        ]
+    }]
   };
 
 }

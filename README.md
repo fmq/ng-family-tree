@@ -1,6 +1,7 @@
 # NgFamilyTree
 
-Angular 7 implementation of: https://codemyui.com/vertical-family-tree-pure-css/
+Angular 7 implementation of: https://jwcooney.com/2016/08/21/example-pure-css-family-tree-markup
+
 
 ## Demo server
 

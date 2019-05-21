@@ -4,6 +4,8 @@ export class Family {
   name: string;
   relationship: string;
   action: any;
-  children: Family[];
+
+  children: Family[] = [];
+  nodes: any[] = [];
 
 }
