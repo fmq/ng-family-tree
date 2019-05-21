@@ -117,6 +117,16 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var TreeNode = /** @class */ (function () {
+        function TreeNode() {
+        }
+        return TreeNode;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
 
     /**
      * @fileoverview added by tsickle
@@ -126,6 +136,7 @@
     exports.NgFamilyTreeComponent = NgFamilyTreeComponent;
     exports.NgFamilyTreeModule = NgFamilyTreeModule;
     exports.Family = Family;
+    exports.TreeNode = TreeNode;
     exports.ɵa = FtLeafComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });

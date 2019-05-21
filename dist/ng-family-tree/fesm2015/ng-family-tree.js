@@ -123,12 +123,19 @@ NgFamilyTreeModule.decorators = [
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class TreeNode {
+}
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { NgFamilyTreeComponent, NgFamilyTreeModule, Family, FtLeafComponent as ɵa };
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+export { NgFamilyTreeComponent, NgFamilyTreeModule, Family, TreeNode, FtLeafComponent as ɵa };
 
 //# sourceMappingURL=ng-family-tree.js.map
