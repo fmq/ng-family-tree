@@ -8,7 +8,10 @@ import { Family } from '../models/family.model';
       <ul>
         <li>
           <div>
-            <span  *ngFor="let node of family.nodes" (click)="_leafSelected(node)" [ngClass]="node.gender" class="node">{{node.name}}</span>
+            <span  *ngFor="let node of family.nodes" (click)="_leafSelected(node)"
+                   class="{{node.gender}}"
+                   [ngClass]="node.relationship ? node.relationship + '-leaf' : ''"
+                   class="node">{{node.name}}</span>
           </div>
           <ul>
             <li *ngFor="let child of family.children">
