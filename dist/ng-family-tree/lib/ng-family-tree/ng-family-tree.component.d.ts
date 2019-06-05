@@ -6,4 +6,5 @@ export declare class NgFamilyTreeComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     _leafSelected(_leaf: any): void;
+    _setWidth(child: Family): boolean;
 }

@@ -18,25 +18,21 @@ export class AppComponent implements OnInit {
 
   family = {
     nodes: [
-      {name: 'padre', gender: 'male'},
-      {name: 'madre', gender: 'female'}
+      { name: 'padre'},
+      { name: 'madre'}
       ],
     children: [{
       nodes: [
-        {name: 'Self', gender: 'male', relationship: 'self'},
+        { name: 'Self', relationship: 'self' },
       ],
       children: [
-        {nodes: [{name: 'Grand Grand Child 2', gender: 'male'}] },
-        {nodes: [{name: 'Grand Grand Child 3', gender: 'male'}] },
-        {nodes: [{name: 'Grand Grand Child 4', gender: 'female'}] }
+        { nodes: [{ name: 'Grand Grand Child 2'}] },
+        { nodes: [{ name: 'Grand Grand Child 3'}] },
+        { nodes: [{ name: 'Grand Grand Child 4'}] }
         ]
     }]
   };
 
   ngOnInit() {
-    const node = new TreeNode();
-    node.name = 'XX';
-    this.family.nodes.push(node);
-
   }
 }
