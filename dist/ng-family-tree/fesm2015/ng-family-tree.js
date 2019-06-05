@@ -54,7 +54,7 @@ NgFamilyTreeComponent.decorators = [
                    class="node">{{node.name}}</span>
           </div>
           <ul>
-            <li *ngFor="let child of family.children" [ngStyle]="{'width': _setWidth(child) ? '100%' : ''}" >
+            <li *ngFor="let child of family.children" [ngStyle]="{'width': _setWidth(child) ? '100%' : 'auto'}" >
               <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="child"></ft-leaf>
             </li>
           </ul>
@@ -99,7 +99,7 @@ FtLeafComponent.decorators = [
              (click)="_leafSelected(node)" [class]="node.gender">{{node.name}}</span>
     </div>
     <ul *ngIf="child.children && child.children.length > 0">
-      <li *ngFor="let row of child.children">
+      <li *ngFor="let row of child.children" [ngStyle]="{'width': child.children.length === 1 ? '100%' : 'auto'}">
         <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="row"></ft-leaf>
       </li>
     </ul>

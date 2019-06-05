@@ -14,7 +14,7 @@ import { Family } from '../models/family.model';
                    class="node">{{node.name}}</span>
           </div>
           <ul>
-            <li *ngFor="let child of family.children" [ngStyle]="{'width': _setWidth(child) ? '100%' : ''}" >
+            <li *ngFor="let child of family.children" [ngStyle]="{'width': _setWidth(child) ? '100%' : 'auto'}" >
               <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="child"></ft-leaf>
             </li>
           </ul>

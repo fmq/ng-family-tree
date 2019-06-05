@@ -11,7 +11,7 @@ import { Family } from '../models/family.model';
              (click)="_leafSelected(node)" [class]="node.gender">{{node.name}}</span>
     </div>
     <ul *ngIf="child.children && child.children.length > 0">
-      <li *ngFor="let row of child.children">
+      <li *ngFor="let row of child.children" [ngStyle]="{'width': child.children.length === 1 ? '100%' : 'auto'}">
         <ft-leaf (onLeafSelected)="_leafSelected($event)" [child]="row"></ft-leaf>
       </li>
     </ul>
