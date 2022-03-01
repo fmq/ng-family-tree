@@ -1,51 +1,42 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "cli": {
-        "analytics": "ee8810ad-b40a-4ea6-91d3-e7532622108a"
-    },
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-        "change-color-vj": {
-            "projectType": "library",
-            "root": "projects/change-color-vj",
-            "sourceRoot": "projects/change-color-vj/src",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:ng-packagr",
-                    "options": {
-                        "tsConfig": "projects/change-color-vj/tsconfig.lib.json",
-                        "project": "projects/change-color-vj/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "tsConfig": "projects/change-color-vj/tsconfig.lib.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/change-color-vj/src/test.ts",
-                        "tsConfig": "projects/change-color-vj/tsconfig.spec.json",
-                        "karmaConfig": "projects/change-color-vj/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/change-color-vj/tsconfig.lib.json",
-                            "projects/change-color-vj/tsconfig.spec.json"
-                        ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
-                    }
-                }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-family-tree": {
+      "projectType": "library",
+      "root": "projects/ngx-family-tree",
+      "sourceRoot": "projects/ngx-family-tree/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-family-tree/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-family-tree/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-family-tree/tsconfig.lib.json"
             }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-family-tree/src/test.ts",
+            "tsConfig": "projects/ngx-family-tree/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-family-tree/karma.conf.js"
+          }
         }
-    },
-    "defaultProject": "change-color-vj"
+      }
+    }
+  },
+  "defaultProject": "ngx-family-tree"
 }

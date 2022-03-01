@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChangeColorComponent } from './change-color.component';
+import { NgxFamilyTreeComponent } from './ngx-family-tree.component';
 
-describe('ChangeColorComponent', () => {
-  let component: ChangeColorComponent;
-  let fixture: ComponentFixture<ChangeColorComponent>;
+describe('NgxFamilyTreeComponent', () => {
+  let component: NgxFamilyTreeComponent;
+  let fixture: ComponentFixture<NgxFamilyTreeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChangeColorComponent ]
+      declarations: [ NgxFamilyTreeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChangeColorComponent);
+    fixture = TestBed.createComponent(NgxFamilyTreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

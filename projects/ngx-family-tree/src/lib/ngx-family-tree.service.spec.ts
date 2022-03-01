@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ChangeColorService } from './change-color.service';
+import { NgxFamilyTreeService } from './ngx-family-tree.service';
 
-describe('ChangeColorService', () => {
-  let service: ChangeColorService;
+describe('NgxFamilyTreeService', () => {
+  let service: NgxFamilyTreeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ChangeColorService);
+    service = TestBed.inject(NgxFamilyTreeService);
   });
 
   it('should be created', () => {
