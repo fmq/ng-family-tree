@@ -4,7 +4,7 @@ https://github.com/fmq/ng-family-tree
 
 # MyWorkspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.14.
 
 ## Development server
 
