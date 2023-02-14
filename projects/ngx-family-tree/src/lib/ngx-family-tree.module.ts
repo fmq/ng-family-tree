@@ -17,4 +17,4 @@ import { NgxFamilyTreeComponent } from './ngx-family-tree.component';
     NgxFamilyTreeComponent
   ]
 })
-export class NgxFamilyTreeModule { }
+export default class NgxFamilyTreeModule { }
