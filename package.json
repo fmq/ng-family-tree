@@ -1,12 +1,32 @@
 {
     "name": "ngx-family-tree",
-    "version": "14.2.14",
+    "version": "14.2.15",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vijaysutaria/ng-family-tree.git"
+    },
+    "author": {
+        "name": "Vijay Sutaria",
+        "email": "vijaysutaria@gmail.com"
+    },
+    "keywords": [
+        "ngx",
+        "angular",
+        "angular14",
+        "family",
+        "tree",
+        "family tree"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vijaysutaria/ng-family-tree/issues"
     },
     "dependencies": {
         "@angular/animations": "^14.2.12",

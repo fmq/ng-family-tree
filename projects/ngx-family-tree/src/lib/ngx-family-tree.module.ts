@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FtLeafComponent } from './ft-leaf.component';
 import { NgxFamilyTreeComponent } from './ngx-family-tree.component';
 
-
-
 @NgModule({
   declarations: [
     NgxFamilyTreeComponent,
@@ -17,4 +15,4 @@ import { NgxFamilyTreeComponent } from './ngx-family-tree.component';
     NgxFamilyTreeComponent
   ]
 })
-export default class NgxFamilyTreeModule { }
+export class NgxFamilyTreeModule { }
