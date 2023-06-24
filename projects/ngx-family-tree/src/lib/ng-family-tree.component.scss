@@ -19,6 +19,9 @@ $border_color: #94a0b4;
         transition: all 0.5s;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         ul {
             &::before {
                 content: "";
