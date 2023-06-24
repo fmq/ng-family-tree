@@ -1,6 +1,6 @@
 {
     "name": "ngx-family-tree",
-    "version": "14.2.15",
+    "version": "14.2.16",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",

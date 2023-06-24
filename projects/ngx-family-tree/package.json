@@ -1,6 +1,6 @@
 {
     "name": "ngx-family-tree",
-    "version": "14.2.15",
+    "version": "14.2.16",
     "peerDependencies": {
         "@angular/common": "^14.2.12",
         "@angular/core": "^14.2.12"
