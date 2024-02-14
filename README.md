@@ -1,13 +1,14 @@
-# NgFamilyTree
+# Angular Family Tree (ngx-family-tree)
 
-Angular 7 implementation of: https://jwcooney.com/2016/08/21/example-pure-css-family-tree-markup
+## Credit Goes To
 
+https://github.com/fmq
+https://github.com/fmq/ng-family-tree
 
-## Demo server
+## Angular Version
 
-Run `ng serve --project demo` for a demo server. Navigate to `http://localhost:4200/`. 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.14.
 
+## Angular help
 
-## Build
-
-Run `ng build ng-family-tree` to build the project.
+To get help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
